@@ -1,0 +1,72 @@
+# Product
+GET http://localhost:5000/products 
+
+###
+GET http://localhost:5000/products/1
+
+###
+POST http://localhost:5000/products
+Content-Type: application/json
+
+// data yang akan kita kirimkan
+{
+    "name":"Ketoprak",
+    "price": 12000
+}
+
+###
+PATCH http://localhost:5000/products/1
+Content-Type: application/json
+
+// data yang akan kita kirimkan
+{
+    "name":"Mie Ayam",
+    "price": 15000
+}
+
+###
+DELETE http://localhost:5000/products/2 
+
+# --------------------------------------
+# Transaksi
+# --------------------------------------
+
+###
+GET http://localhost:5000/transaksis 
+
+###
+GET http://localhost:5000/transaksis/1
+
+###
+POST http://localhost:5000/transaksis
+Content-Type: application/json
+
+// data yang akan kita kirimkan
+{
+    "products_id": 1,
+    "order_date": "2023-01-18",
+    "quantity": 1
+}
+
+###
+PATCH http://localhost:5000/transaksis/1
+Content-Type: application/json
+
+// data yang akan kita kirimkan
+{
+    "products_id": 1,
+    "order_date": "2023-01-12",
+    "quantity": 3
+}
+
+###
+DELETE http://localhost:5000/transaksis/2 
+
+###
+# GET http://localhost:5000/transaksis/date/"2024-01-23"
+# GET http://localhost:5000/transaksis/date/2024-01-23
+# GET http://localhost:5000/transaksis/search?date=2024-01-23
+
+# GET http://localhost:5000/transaksis?search_query=2024-01-19
+
+GET http://localhost:5000/transaksis/search?order_date=2024-01-23
